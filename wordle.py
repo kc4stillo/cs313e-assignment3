@@ -124,11 +124,26 @@ def prepare_game():
     with open("valid_guesses.txt", "r", encoding="ascii") as valid_nonsecret_words:
         valid_words = [word.rstrip() for word in valid_nonsecret_words.readlines()]
 
+    with open("secret_words.txt", "r", encoding="ascii") as valid_secret_words:
+        secret_words = [word.rstrip() for word in valid_secret_words.readlines()]
+
     # Modify this if statement! This is just starter code.
     if len(sys.argv) == 2:
-        secret_word = sys.argv[1]
+        # try to cast as int and make the seed
+        try:
+            # set the seed
+            seed = int(sys.argv[1].strip())
+            random.seed(seed)
+            secret_word = random.choice(secret_words)
+        # if theres an exception; test to see if str
+        except ValueError:
+            if len(sys.argv[1]) == 5:
+                if sys.argv[1].isalpha():
+                    secret_word = sys.argv[1]
+            else:
+                raise ValueError
     else:
-        secret_word = "hello"
+        raise ValueError
 
     # You do not have to change this return statement
     return secret_word, valid_words
