@@ -132,8 +132,7 @@ def prepare_game():
         # try to cast as int and make the seed
         try:
             # set the seed
-            seed = int(sys.argv[1].strip())
-            random.seed(seed)
+            random.seed(int(sys.argv[1]))
             secret_word = random.choice(secret_words)
         # if theres an exception; test to see if str
         except ValueError:
@@ -160,9 +159,10 @@ def is_valid_guess(guess, valid_guesses):
     post: returns a boolean value
     """
 
-    # Modify this return statement!
-    return True
-
+    if len(guess) == 5 and guess.isalpha() and guess in valid_guesses:
+        return True
+    else:
+        return False
 
 # TODO: Modify this function. You may delete this comment when you are done.
 def get_feedback(secret_word, guessed_word):
@@ -184,10 +184,30 @@ def get_feedback(secret_word, guessed_word):
     """
     feedback = [None] * NUM_LETTERS
 
-    # Modify this! This is just starter code.
-    for i in range(NUM_LETTERS):
-        feedback[i] = WRONG_SPOT_COLOR
+    # CORRECT_COLOR = "\033[1;92m"
+    # WRONG_SPOT_COLOR = "\033[1;93m"
+    # NOT_IN_WORD_COLOR = "\033[1;97m"
+    # RESET_COLOR = "\033[0m"
 
+    # Modify this! This is just starter code.
+    d = {}
+    for i, curr_letter in enumerate(secret_word):
+        if curr_letter not in d:
+            d[curr_letter] = [0, []]
+        d[curr_letter][0] += 1
+        d[curr_letter][1].append(i)
+
+    for i, curr_letter in enumerate(guessed_word):
+        if curr_letter in secret_word:
+            if d[curr_letter][0] > 0:
+                if i in d[curr_letter][1]:
+                    feedback[i] = CORRECT_COLOR
+                else: feedback[i] = WRONG_SPOT_COLOR
+                d[curr_letter][0] -= 1
+            else:
+                feedback[i] = NOT_IN_WORD_COLOR
+        else:
+            feedback[i] = NOT_IN_WORD_COLOR
     # You do not have to change this return statement
     return color_word(feedback, guessed_word)
 
