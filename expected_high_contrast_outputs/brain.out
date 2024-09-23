@@ -1,0 +1,31 @@
+Welcome to Command Line Wordle!
+
+[1;97mH[0m[1;97mo[0m[1;97mw[0m[1;97m [0m[1;97mT[0m[1;97mo[0m[1;97m [0m[1;97mP[0m[1;97ml[0m[1;97ma[0m[1;97my[0m
+Guess the secret word in 6 tries.
+Each guess must be a valid 5-letter word.
+The color of the letters will change to show
+how close your guess was.
+
+Examples:
+[1;91mw[0m[1;97me[0m[1;97ma[0m[1;97mr[0m[1;97my[0m
+[1;97mw[0m is in the word and in the correct spot.
+[1;97mp[0m[1;94mi[0m[1;97ml[0m[1;97ml[0m[1;97ms[0m
+[1;97mi[0m is in the word but in the wrong spot.
+[1;97mv[0m[1;97ma[0m[1;97mg[0m[1;97mu[0m[1;97me[0m
+[1;97mu[0m is not in the word in any spot.
+
+Enter your 1st guess: brain!
+Bad input detected. Please try again.
+Enter your 1st guess: !brain
+Bad input detected. Please try again.
+Enter your 1st guess: brains
+Bad input detected. Please try again.
+Enter your 1st guess: brain:0
+Bad input detected. Please try again.
+Enter your 1st guess: brain!!!!
+Bad input detected. Please try again.
+Enter your 1st guess: brain.
+Bad input detected. Please try again.
+Enter your 1st guess: brain
+                      [1;91mb[0m[1;91mr[0m[1;91ma[0m[1;91mi[0m[1;91mn[0m
+Congratulations! You guessed the word '[1;91mb[0m[1;91mr[0m[1;91ma[0m[1;91mi[0m[1;91mn[0m' correctly.

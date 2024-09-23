@@ -1,0 +1,37 @@
+Welcome to Command Line Wordle!
+
+[1;97mH[0m[1;97mo[0m[1;97mw[0m[1;97m [0m[1;97mT[0m[1;97mo[0m[1;97m [0m[1;97mP[0m[1;97ml[0m[1;97ma[0m[1;97my[0m
+Guess the secret word in 6 tries.
+Each guess must be a valid 5-letter word.
+The color of the letters will change to show
+how close your guess was.
+
+Examples:
+[1;92mw[0m[1;97me[0m[1;97ma[0m[1;97mr[0m[1;97my[0m
+[1;97mw[0m is in the word and in the correct spot.
+[1;97mp[0m[1;93mi[0m[1;97ml[0m[1;97ml[0m[1;97ms[0m
+[1;97mi[0m is in the word but in the wrong spot.
+[1;97mv[0m[1;97ma[0m[1;97mg[0m[1;97mu[0m[1;97me[0m
+[1;97mu[0m is not in the word in any spot.
+
+Enter your 1st guess: p00fy
+Bad input detected. Please try again.
+Enter your 1st guess: poofy
+Bad input detected. Please try again.
+Enter your 1st guess: guava
+                      [1;97mg[0m[1;97mu[0m[1;93ma[0m[1;97mv[0m[1;97ma[0m
+Enter your 2nd guess: basin
+                      [1;97mb[0m[1;92ma[0m[1;97ms[0m[1;97mi[0m[1;97mn[0m
+Enter your 3rd guess: w4tch!
+Bad input detected. Please try again.
+Enter your 3rd guess: watch
+                      [1;97mw[0m[1;92ma[0m[1;97mt[0m[1;93mc[0m[1;97mh[0m
+Enter your 4th guess: r4c3d
+Bad input detected. Please try again.
+Enter your 4th guess: raced
+                      [1;97mr[0m[1;92ma[0m[1;93mc[0m[1;92me[0m[1;97md[0m
+Enter your 5th guess: CAMEL
+Bad input detected. Please try again.
+Enter your 5th guess: camel
+                      [1;92mc[0m[1;92ma[0m[1;92mm[0m[1;92me[0m[1;92ml[0m
+Congratulations! You guessed the word '[1;92mc[0m[1;92ma[0m[1;92mm[0m[1;92me[0m[1;92ml[0m' correctly.
